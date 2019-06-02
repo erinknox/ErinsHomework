@@ -1,0 +1,24 @@
+﻿@model CardGenerator.Models.CardInfo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>YourCard</title>
+    <h1 class="text-center text-info">Thank you, @Model.From here is your card!</h1>
+</head>
+<body>
+    <div class="container">
+        <p class=" text-justify text-info">@Model.To,  </p>
+        <img src="~/Birthday.jpg" class="img-responsive " />
+        <p class=" text-info text-justify">@Model.Message </p>
+        <p class=" text-info text-justify"> -From @Model.From</p>
+    </div>
+</body>
+</html>

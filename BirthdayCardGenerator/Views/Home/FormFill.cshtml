@@ -1,0 +1,55 @@
+﻿@model CardGenerator.Models.CardInfo
+@{
+    ViewBag.Title = "Form Fill";
+    Layout = null;
+  
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>FormFill</title>
+    <h1  class="text-center" >Welcome to Your Birthday Card Generator! </h1>
+</head>
+<body style="margin:initial" class="bg-info">
+    <hr />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary();
+        <div class="container">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-xs-10 ">
+                                    <p class="form-control text-center">From: @Html.TextBoxFor(t => t.From)</p>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-xs-10 ">
+                                    <p class="form-control text-center">To: @Html.TextBoxFor(t => t.To)</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-10 ">
+                                    <p class="form-control text-center">Message: @Html.TextBoxFor(t => t.Message)</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-10 ">
+                                    <input type="submit" value="Send Card" class="form-control btn-success center-block text-center" />
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+        </div>
+    }
+</body>
+</html>
